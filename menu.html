@@ -4,27 +4,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Brew & Co - Menu</title>
     <link rel="stylesheet" href="./style/menu.css">
     <link rel="stylesheet" href="./style/style.css">
     <script src="index.js" defer></script>
-  
-    
-
+    <script src="menu.js" defer></script>
 </head>
 
-<body class=" ">
+<body>
+    <!-- Order Success Modal (should be outside other containers) -->
+    <div class="order-modal" id="orderModal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <img src="https://cdn-icons-png.flaticon.com/512/7518/7518748.png" alt="Success" class="success-icon">
+            <h2>Order Successful!</h2>
+            <p>Your order has been placed successfully.</p>
+            <p>We'll prepare your food with love ❤️</p>
+            <button class="modal-close-btn">Continue Shopping</button>
+        </div>
+    </div>
+
     <div class="menu-section">
-
         <div class="menu-header">
-
-            <a href="./index.html"><img width="50" height="50" src="https://img.icons8.com/ios-filled/50/back.png"
-                    alt="back" /></a>
+            <a href="./index.html"><img width="50" height="50" src="https://img.icons8.com/ios-filled/50/back.png" alt="back"></a>
             <h1>Our Menu</h1>
         </div>
         <div class="icon">
             <div class="sider-div">
-                <img src="./public/shopping-cart (1).png" alt="">
+                <img src="./public/shopping-cart (1).png" alt="Cart">
                 <div class="round">0</div>
             </div>
         </div>
@@ -32,46 +39,21 @@
    
     <div class="food-section">
         <div class="food-menu" id="food-menu">
-            
+            <!-- Food items will be populated by JavaScript -->
         </div>
     </div>
- <div class="food-section">
-        <div class="food-menu">
-            <div class="food-card">
-               
-            </div>
-            
 
-
-
-        </div>
-    </div>
     <div class="side-bar">
         <div class="upper-item">
-            <img id="close" src="https://img.icons8.com/?size=100&id=63688&format=png&color=000000" alt="">
+            <img id="close" src="https://img.icons8.com/?size=100&id=63688&format=png&color=000000" alt="Close">
             <h1>Order List</h1>
         </div>
         <div class="oder-content">
-            <div class="main-container">
-                <div class="item-image">
-                    <img src="./public/pexels-brettjordan-825661.jpg" alt="">
-                </div>
-                <div class="item-content">
-                    <div class="item-name">pizza</div>
-                    <div class="item-pricing">
-                        200$
-                    </div>
-                    <div class="item-qunity">
-                        <span>
-                            <</span>
-                                <span>1</span>
-                                <span>></span>
-                    </div>
-                    </div>
-            </div>
+            <!-- Order items will be populated by JavaScript -->
         </div>
-        <div class="button"><button>oderIn</button>
-            <button >Cancel</button>
+        <div class="button">
+            <button class="place-order-btn">Order Now</button>
+            <button class="cancel-order-btn">Cancel</button>
         </div>
     </div>
 </body>

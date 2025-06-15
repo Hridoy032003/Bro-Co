@@ -5,6 +5,7 @@
     box-sizing: border-box;
     stroke-width: 0;
     scroll-behavior: smooth;
+
 }
 
 body {
@@ -273,4 +274,117 @@ body.showCart .side-bar {
     .food-section .food-menu .food-card {
         padding: 15px;
     }
+}
+.add-to-cart{
+    padding: 10px;
+    background: #ab4242;
+    border-radius: 5px;
+    border:none;
+    font-size: 16px;
+    margin-top: 5px;
+    cursor: pointer;
+}
+
+/* after oderder card */
+/* Order Success Modal Styles */
+.order-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 400px;
+    width: 90%;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    position: relative;
+    animation: modalFadeIn 0.3s;
+}
+
+@keyframes modalFadeIn {
+    from {opacity: 0; transform: translateY(-50px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+
+.success-icon {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 20px;
+}
+
+.close-modal {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #888;
+}
+
+.modal-close-btn {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.modal-close-btn:hover {
+    background-color: #f44336;
+}
+
+/* Order Now Button Styles */
+.place-order-btn {
+    background-color: #be544c;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s;
+    margin-right: 10px;
+}
+
+.place-order-btn:hover {
+    background-color: #f44336;
+    transform: translateY(-2px);
+}
+
+.cancel-order-btn {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s;
+}
+
+.cancel-order-btn:hover {
+    background-color: #d32f2f;
+    transform: translateY(-2px);
+}
+
+.button {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
 }
