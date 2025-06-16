@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Show success message
         showOrderSuccess();
-        
+        updateCartCount();  
         // In a real app, you would send the order to your server here
         console.log('Order placed successfully!');
         
