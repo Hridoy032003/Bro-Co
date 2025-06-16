@@ -139,15 +139,6 @@ const initApp = () => {
 initApp();
 
 
-const button1 = document.querySelector('.button1');
-const aboutpopUp = document.querySelector('.aboutpopUp');
-
-function onAbout() {
-    aboutpopUp.style.display = 'block'; 
-    console.log("its clicck ")
-}
-
-button1.addEventListener('click', onAbout);
 
 
 
