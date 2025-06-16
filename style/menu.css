@@ -296,8 +296,8 @@ body.showCart .side-bar {
     height: 100%;
     background-color: rgba(0, 0, 0, 0.7);
     z-index: 1000;
-    justify-content: center;
-    align-items: center;
+  align-content: center;
+  justify-items: center;
 }
 
 .modal-content {

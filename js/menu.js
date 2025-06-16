@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const cancelOrderBtn = document.querySelector('.cancel-order-btn');
     
     function showOrderSuccess() {
-        orderModal.style.display = 'flex';
+        orderModal.style.display = 'block';
         document.body.style.overflow = 'hidden';
     }
     
