@@ -17,6 +17,7 @@ body {
     display: flex;
     cursor: pointer;
     position: relative;
+    flex-direction: column;
 }
 
 img {
@@ -387,4 +388,13 @@ body.showCart .side-bar {
     display: flex;
     justify-content: center;
     gap: 10px;
+}
+.icon-tg{
+    color: white;
+    text-align: center;
+    height: 22px;
+    width: 22px;
+    border-radius: 50%;
+   margin-top: -15px;
+    background: red;
 }

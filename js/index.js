@@ -59,7 +59,7 @@ const addDataToHTML = (listFood) => {
     // Add event listener to the button
     const addButton = newElement.querySelector(".add-to-cart");
     addButton.addEventListener("click", () => {
-      addToCart(element); // Pass the food item to your addToCart function
+      addToCart(element); 
     });
   });
 };

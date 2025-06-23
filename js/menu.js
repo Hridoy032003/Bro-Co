@@ -27,20 +27,26 @@ document.addEventListener('DOMContentLoaded', function() {
             closeOrderModal();
         }
     });
-    
-    // Place Order Button
+    const totalItem=0;
+    const itemcount=(totalItem)=>{
+        totalItem=totalItem+1;
+
+    }
+   
     placeOrderBtn.addEventListener('click', function() {
-        // Check if cart is empty
+     
         const orderItems = document.querySelectorAll('.oder-content .main-container');
         if (orderItems.length === 0) {
             alert('Your cart is empty. Please add items before ordering.');
             return;
         }
         
-        // Show success message
+      
         showOrderSuccess();
         updateCartCount();  
-        // In a real app, you would send the order to your server here
+        itemcount()
+        
+        
         console.log('Order placed successfully!');
         
     
