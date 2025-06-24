@@ -1,0 +1,162 @@
+[
+  {
+    "id": 1,
+    "name": "Spaghetti Carbonara",
+    "image": "https://images.pexels.com/photos/1279330/pexels-photo-1279330.jpeg",
+    "price": 12.99,
+    "info": "A classic Italian pasta dish made with eggs, cheese, pancetta, and pepper.",
+    "ingredients": ["Spaghetti", "Eggs", "Cheese", "Pancetta", "Pepper"]
+  },
+  {
+    "id": 2,
+    "name": "Margherita Pizza",
+    "image": "https://images.pexels.com/photos/4109126/pexels-photo-4109126.jpeg",
+    "price": 8.99,
+    "info": "A simple pizza topped with tomato, fresh mozzarella, basil, and olive oil.",
+    "ingredients": ["Tomato", "Mozzarella", "Basil", "Olive Oil", "Pizza Dough"]
+  },
+  {
+    "id": 3,
+    "name": "Caesar Salad",
+    "image": "https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg",
+    "price": 7.99,
+    "info": "A crisp salad with romaine lettuce, Caesar dressing, croutons, and parmesan cheese.",
+    "ingredients": ["Romaine Lettuce", "Caesar Dressing", "Croutons", "Parmesan Cheese"]
+  },
+  {
+    "id": 4,
+    "name": "Burger",
+    "image": "https://images.pexels.com/photos/1639562/pexels-photo-1639562.jpeg",
+    "price": 10.99,
+    "info": "A juicy beef patty served with lettuce, tomato, cheese, and a soft bun.",
+    "ingredients": ["Beef Patty", "Lettuce", "Tomato", "Cheese", "Bun"]
+  },
+  {
+    "id": 5,
+    "name": "Vegetarian Burger",
+    "image": "https://images.pexels.com/photos/1435907/pexels-photo-1435907.jpeg",
+    "price": 9.99,
+    "info": "A delicious plant-based patty with fresh vegetables, cheese, and sauce.",
+    "ingredients": ["Vegetarian Patty", "Lettuce", "Tomato", "Cheese", "Bun", "Vegetable Sauce"]
+  },
+  {
+    "id": 6,
+    "name": "Chicken Tikka Masala",
+    "image": "https://images.pexels.com/photos/11178616/pexels-photo-11178616.jpeg",
+    "price": 14.99,
+    "info": "Tender chicken in a creamy tomato-based curry sauce with aromatic spices.",
+    "ingredients": ["Chicken", "Tomato", "Cream", "Garlic", "Ginger", "Spices"]
+  },
+  {
+    "id": 7,
+    "name": "Fish and Chips",
+    "image": "https://images.pexels.com/photos/1660205/pexels-photo-1660205.jpeg",
+    "price": 11.49,
+    "info": "Crispy battered fish fillets served with thick-cut fries and tartar sauce.",
+    "ingredients": ["Fish Fillets", "Flour", "Batter", "Potatoes", "Tartar Sauce"]
+  },
+  {
+    "id": 8,
+    "name": "Grilled Cheese Sandwich",
+    "image": "https://images.pexels.com/photos/1600711/pexels-photo-1600711.jpeg",
+    "price": 5.99,
+    "info": "Melted cheese between two slices of toasted bread, served with a side of pickles.",
+    "ingredients": ["Bread", "Cheese", "Butter", "Pickles"]
+  },
+  {
+    "id": 9,
+    "name": "Peking Duck",
+    "image": "https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd8",
+    "price": 18.99,
+    "info": "Crispy duck served with pancakes, hoisin sauce, and cucumber.",
+    "ingredients": ["Duck", "Pancakes", "Hoisin Sauce", "Cucumber"]
+  },
+  {
+    "id": 10,
+    "name": "Sushi Roll",
+    "image": "https://images.pexels.com/photos/357756/pexels-photo-357756.jpeg",
+    "price": 13.49,
+    "info": "Fresh sushi rolls with fish, rice, and seaweed.",
+    "ingredients": ["Fish", "Rice", "Seaweed", "Vinegar", "Wasabi"]
+  },
+  {
+    "id": 11,
+    "name": "Fettuccine Alfredo",
+    "image": "https://images.pexels.com/photos/1437267/pexels-photo-1437267.jpeg",
+    "price": 13.99,
+    "info": "Creamy pasta with parmesan cheese and a rich white sauce.",
+    "ingredients": ["Fettuccine", "Cream", "Parmesan Cheese", "Butter", "Garlic"]
+  },
+  {
+    "id": 12,
+    "name": "Eggplant Parmesan",
+    "image": "https://images.unsplash.com/photo-1625169589151-64f70b213f1b",
+    "price": 11.49,
+    "info": "Breaded and fried eggplant slices topped with marinara sauce and melted mozzarella.",
+    "ingredients": ["Eggplant", "Breadcrumbs", "Mozzarella", "Marinara Sauce"]
+  },
+  {
+    "id": 13,
+    "name": "Tacos",
+    "image": "https://images.pexels.com/photos/461198/pexels-photo-461198.jpeg",
+    "price": 7.49,
+    "info": "Soft tortillas filled with seasoned beef, lettuce, cheese, and salsa.",
+    "ingredients": ["Tortillas", "Beef", "Lettuce", "Cheese", "Salsa"]
+  },
+  {
+    "id": 14,
+    "name": "Pad Thai",
+    "image": "https://images.pexels.com/photos/461198/pexels-photo-461198.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260",
+    "price": 10.99,
+    "info": "A popular Thai stir-fried noodle dish with tamarind, peanuts, and lime.",
+    "ingredients": ["Rice Noodles", "Tamarind", "Peanuts", "Lime", "Egg"]
+  },
+  {
+    "id": 15,
+    "name": "Ramen",
+    "image": "https://images.pexels.com/photos/4033631/pexels-photo-4033631.jpeg",
+    "price": 9.99,
+    "info": "Japanese noodle soup with a rich broth, meat, and fresh vegetables.",
+    "ingredients": ["Ramen Noodles", "Pork", "Broth", "Vegetables", "Soy Sauce"]
+  },
+  {
+    "id": 16,
+    "name": "Chicken Wings",
+    "image": "https://images.pexels.com/photos/1143754/pexels-photo-1143754.jpeg",
+    "price": 8.49,
+    "info": "Crispy wings tossed in a spicy buffalo sauce, served with ranch dressing.",
+    "ingredients": ["Chicken Wings", "Buffalo Sauce", "Ranch Dressing"]
+  },
+  {
+    "id": 17,
+    "name": "Lamb Shawarma",
+    "image": "https://images.unsplash.com/photo-1635756834417-8a894ef2952e",
+    "price": 12.49,
+    "info": "Spiced lamb served with fresh veggies, tahini, and pita bread.",
+    "ingredients": ["Lamb", "Tahini", "Pita Bread", "Tomato", "Cucumber", "Lettuce"]
+  },
+  {
+    "id": 18,
+    "name": "Falafel",
+    "image": "https://images.pexels.com/photos/1095550/pexels-photo-1095550.jpeg",
+    "price": 6.99,
+    "info": "Fried chickpea balls served with hummus, salad, and pita bread.",
+    "ingredients": ["Chickpeas", "Garlic", "Parsley", "Tahini", "Pita Bread"]
+  },
+  {
+    "id": 19,
+    "name": "Moussaka",
+    "image": "https://images.unsplash.com/photo-1654625109606-5dbddc8e4267",
+    "price": 14.99,
+    "info": "A Greek casserole made of layers of eggplant, ground meat, and béchamel sauce.",
+    "ingredients": ["Eggplant", "Ground Meat", "Béchamel Sauce", "Tomato"]
+  },
+  {
+    "id": 20,
+    "name": "Crepes",
+    "image": "https://images.pexels.com/photos/1351238/pexels-photo-1351238.jpeg",
+    "price": 6.49,
+    "info": "Thin French pancakes filled with Nutella, fruits, or whipped cream.",
+    "ingredients": ["Flour", "Eggs", "Milk", "Nutella", "Fruits"]
+  }
+]

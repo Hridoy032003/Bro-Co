@@ -50,12 +50,19 @@ const addDataToHTML = (listFood) => {
     newElement.innerHTML = `
             <img src="${element.image}" alt="${element.name}">
             <h3>${element.name}</h3>
-            <p>${element.description}</p>
+            
             <span>$${element.price}</span>
+               <a href="productDetails.html" class="view-details" data-id="${element.id}">View Details</a>
+
             <button class="add-to-cart" data-id="${index}">Add to Cart</button>
+          
         `;
     foodMenu.appendChild(newElement);
-
+    const viewDetailsLink = newElement.querySelector(".view-details");
+    viewDetailsLink.addEventListener("click", () => {
+     
+      localStorage.setItem("selectedProduct", JSON.stringify(element));
+    });
     // Add event listener to the button
     const addButton = newElement.querySelector(".add-to-cart");
     addButton.addEventListener("click", () => {
@@ -65,72 +72,4 @@ const addDataToHTML = (listFood) => {
 };
 
 // Example addToCart function
-let cart = [];
-const addToCart = (item) => {
-  console.log("Added to cart:", item);
-  let positionInProductInCart = cart.findIndex(
-    (value) => value.item.id === item.id
-  );
-  if (cart.length <= 0) {
-    cart = [
-      {
-        item,
-        quantity: 1,
-      },
-    ];
-  } else if (positionInProductInCart < 0) {
-    cart.push({
-      item,
-      quantity: 1,
-    });
-  } else {
-    cart[positionInProductInCart].quantity =
-      cart[positionInProductInCart].quantity + 1;
-  }
-  console.log(cart);
-  addcartToHTML();
-};
-function add() {}
-const addcartToHTML = () => {
-  const orderContent = document.querySelector(".oder-content");
-  orderContent.innerHTML = ""; // clear previous cart content
 
-  if (cart.length > 0) {
-    cart.forEach((cartItem) => {
-      const newCart = document.createElement("div");
-      newCart.classList.add("main-container");
-
-      newCart.innerHTML = `
-                <div class="item-image">
-                    <img src="${cartItem.item.image}" alt="${cartItem.item.name}">
-                </div>
-                <div class="item-content">
-                    <div class="item-name">${cartItem.item.name}</div>
-                    <div class="item-pricing">
-                        $${cartItem.item.price}
-                    </div>
-                    <div class="item-qunity">
-               
-                        <span>${cartItem.quantity}</span>
-               
-                    </div>
-                </div>
-            `;
-
-      orderContent.appendChild(newCart);
-    });
-  } else {
-    orderContent.innerHTML = "<p>Your cart is empty.</p>";
-  }
-};
-
-const initApp = () => {
-  fetch("./food.json")
-    .then((response) => response.json())
-    .then((data) => {
-      addDataToHTML(data);
-    })
-    .catch((error) => console.error("Error loading food data:", error));
-};
-
-initApp();

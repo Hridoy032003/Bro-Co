@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details</title>
+    <link rel="stylesheet" href="../style/productDetails.css">
+    <link rel="stylesheet" href="../style/style.css">
+    <link rel="stylesheet" href="../style/menu.css">
+
+    <script src="./js/menu.js" defer></script>
+</head>
+
+<body>
+    <section>
+        <div class="img-product">
+            <img id="product-image" src="" alt="Product Image">
+        </div>
+        <div class="details">
+            <h1 id="product-name"></h1>
+            <h3 id="product-price"></h3>
+            <span id="product-info"></span>
+      
+        </div>
+    </section>
+
+    <script>
+       
+        document.addEventListener('DOMContentLoaded', () => {
+            const productData = JSON.parse(localStorage.getItem('selectedProduct'));
+
+            if (productData) {
+               
+                document.getElementById('product-image').src = productData.image;
+                document.getElementById('product-image').alt = productData.name;
+                document.getElementById('product-name').textContent = productData.name;
+                document.getElementById('product-price').textContent = `$${productData.price.toFixed(2)}`;
+                document.getElementById('product-info').textContent = productData.info;
+
+               
+               
+            } 
+        });
+    </script>
+</body>
+
+</html>

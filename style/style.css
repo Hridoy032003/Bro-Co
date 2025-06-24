@@ -194,16 +194,18 @@ section {
 
 .review-slider {
     display: flex;
-    overflow-x: auto;
+    flex-grow: auto;
+    overflow-x: scroll;
     gap: 30px;
-    padding: 20px 0;
-    scroll-snap-type: x mandatory;
-    scrollbar-width: none;
+    cursor: grab;
+    scrollbar-3dlight-color:red;
+    padding: 10px 100px;
+    margin-bottom: 10px;
+   
+  
+    
 }
 
-.review-slider::-webkit-scrollbar {
-    display: none;
-}
 
 .review-card {
     flex: 0 0 300px;
