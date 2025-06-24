@@ -100,12 +100,12 @@ const decreaseItemQuantity = (productId) => {
   }
 };
 
-// Function to update the cart icon with the total quantity in the cart
+
 const updateCartIcon = () => {
   const totalQuantity = cart.reduce((total, product) => total + product.quantity, 0);
-  const cartIcon = document.getElementById('icon-tg'); // Assuming 'icon-tg' is the id of your cart icon
+  const cartIcon = document.getElementById('icon-tg');
   if (cartIcon) {
-      cartIcon.textContent = totalQuantity; // Update the cart icon with the total quantity
+      cartIcon.textContent = totalQuantity; 
   }
 };
 

@@ -336,16 +336,15 @@ section {
 }
 
 /* Contact Section */
-.contact-section {
-    padding: 80px 5%;
-    background-color: #f5f5f5;
-   
-   
+
+.contact-form{
+    padding: 10px 20px;
 }
 form{
   
     gap: 10px;
     height: 400px;
+ 
 }
 .contact-section h2 {
     font-size: 2.5rem;
@@ -378,8 +377,7 @@ form{
 
 .contact-form {
     
-    min-width: 500px;
-    max-width: 500px;
+ 
     display: flex;
     flex-direction: column;
     gap: 30px;

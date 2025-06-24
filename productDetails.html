@@ -30,7 +30,7 @@
         document.addEventListener('DOMContentLoaded', () => {
             const productData = JSON.parse(localStorage.getItem('selectedProduct'));
 
-            if (productData) {
+           
                
                 document.getElementById('product-image').src = productData.image;
                 document.getElementById('product-image').alt = productData.name;
@@ -40,7 +40,7 @@
 
                
                
-            } 
+            
         });
     </script>
 </body>

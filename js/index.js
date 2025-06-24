@@ -41,7 +41,7 @@ function close() {
 // food showing section
 const addDataToHTML = (listFood) => {
   const foodMenu = document.getElementById("food-menu");
-  foodMenu.innerHTML = ""; // clear old content
+  foodMenu.innerHTML = ""; 
 
   listFood.forEach((element, index) => {
     let newElement = document.createElement("div");
@@ -63,7 +63,7 @@ const addDataToHTML = (listFood) => {
      
       localStorage.setItem("selectedProduct", JSON.stringify(element));
     });
-    // Add event listener to the button
+   
     const addButton = newElement.querySelector(".add-to-cart");
     addButton.addEventListener("click", () => {
       addToCart(element); 
