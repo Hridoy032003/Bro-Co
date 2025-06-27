@@ -1,5 +1,19 @@
+/* Global Styles */
+:root {
+    --primary-color: #ab4242;
+    --primary-hover-color: #8a3535;
+    --text-light: white;
+    --text-dark: #333;
+    --background-light: #f5f5f5;
+    --background-white: white;
+    --font-main: "Roboto", sans-serif;
+    --section-padding: 60px 5%; /* Reduced padding for smaller screens by default */
+    --card-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    --border-radius: 8px; /* Slightly more rounded corners */
+}
+
 * {
-    font-family: "Roboto", sans-serif;
+    font-family: var(--font-main);
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -9,13 +23,44 @@
 body {
     width: 100%;
     overflow-x: hidden;
-    background-color: #f5f5f5;
+    background-color: var(--background-light);
+    color: var(--text-dark);
+    line-height: 1.6; /* Improved default line height */
 }
 
-/* Main Section */
+h1, h2, h3 {
+    line-height: 1.2; /* Consistent line height for headings */
+}
+
+/* Utility Classes */
+.button {
+    background-color: var(--primary-color);
+    border: none;
+    padding: 12px 25px;
+    color: var(--text-light);
+    cursor: pointer;
+    border-radius: var(--border-radius);
+    font-weight: 500;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.button:hover {
+    background-color: var(--primary-hover-color);
+    transform: translateY(-2px);
+}
+
+.section-title {
+    font-size: 2.2rem; /* Slightly reduced for better balance */
+    text-align: center;
+    margin-bottom: 40px;
+    color: var(--text-dark);
+}
+
+/* Main Section (Hero area) */
 .main {
-    height: 100vh;
-    min-height: 600px;
+    min-height: 100vh; /* Use min-height for flexibility */
     display: flex;
     flex-direction: column;
     position: relative;
@@ -39,334 +84,285 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 15px 5%;
-    color: white;
-    position: relative;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 10;
+    color: var(--text-light);
+    position: sticky; /* Make navbar sticky */
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.6); /* Slightly darker for better readability */
+    z-index: 1000; /* Ensure navbar is on top */
+    transition: background-color 0.3s ease;
 }
 
 .nev h1 {
     margin: 0;
     font-size: 1.8rem;
-    color: white;
+    color: var(--text-light);
 }
 
-nav ul {
+#nav-menu ul { /* Target ul inside #nav-menu */
     display: flex;
     list-style: none;
     padding: 0;
     margin: 0;
-    gap: 20px;
+    gap: 25px; /* Increased gap */
 }
 
-nav ul li a {
-    color: white;
+#nav-menu ul li a {
+    color: var(--text-light);
     text-decoration: none;
     font-weight: 500;
     transition: color 0.3s;
+    padding: 5px 0; /* Add some padding for easier clicking */
 }
 
-nav ul li a:hover {
-    color: #ab4242;
+#nav-menu ul li a:hover {
+    color: var(--primary-color);
 }
 
-.book-btn {
-    background-color: #ab4242;
+.book-btn { /* Apply common button styles */
+    background-color: var(--primary-color);
     border: none;
     padding: 10px 20px;
-    color: white;
+    color: var(--text-light);
     cursor: pointer;
-    border-radius: 5px;
+    border-radius: var(--border-radius);
     font-weight: 500;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, transform 0.2s ease;
 }
 
 .book-btn:hover {
-    background-color: #8a3535;
+    background-color: var(--primary-hover-color);
+    transform: translateY(-2px);
 }
 
 /* Hamburger Menu Styles */
 .hamburger {
-    display: none; /* Hidden by default on larger screens */
+    display: none;
     background: none;
     border: none;
-    font-size: 24px;
+    font-size: 28px; /* Slightly larger */
     cursor: pointer;
-    color: white; /* or your preferred color */
+    color: var(--text-light);
+    padding: 5px; /* Add padding for easier tap */
 }
 
-/* Mobile Styles */
-@media (max-width: 768px) {
-    .hamburger {
-        display: block; /* Show hamburger on mobile */
-    }
-
-    #nav-menu {
-        display: none; /* Hide nav by default on mobile */
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        background: #333; /* or your preferred background */
-        padding: 1rem;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-    }
-
-    #nav-menu.active {
-        display: block;
-    }
-
-    #nav-menu ul {
-        flex-direction: column;
-    }
-
-    /* Hide other elements if needed */
-    .book-btn {
-        display: none;
-    }
-}
-
-/* Hero Section */
-section {
-    height: calc(100vh - 80px);
+/* Hero Content Section */
+.hero-section-content { /* Renamed from 'section' to avoid conflict with HTML5 <section> tag if used elsewhere */
+    flex-grow: 1; /* Allow hero content to take available space */
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 0 5%;
+    padding: var(--section-padding);
+    text-align: center; /* Center hero text */
 }
 
-.Hero {
-    max-width: 500px;
+.Hero { /* This is the content box inside hero-section-content */
+    max-width: 600px; /* Increased max-width */
     padding: 40px;
-    background-color: rgba(0, 0, 0, 0.7);
-    border-radius: 10px;
-    color: white;
+    background-color: rgba(0, 0, 0, 0.75); /* Darker overlay for text contrast */
+    border-radius: var(--border-radius);
+    color: var(--text-light);
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
 
-.p1 {
-    font-size: 2.5rem;
+.Hero .p1 { /* Target specifically within .Hero */
+    font-size: 2.8rem; /* Increased font size */
     font-weight: 700;
     line-height: 1.2;
 }
 
-.p2 {
-    font-size: 1.5rem;
+.Hero .p2 {
+    font-size: 1.6rem; /* Increased font size */
     font-weight: 500;
+    opacity: 0.9; /* Slight opacity for subtlety */
 }
 
-.p3 {
-    font-size: 1rem;
-    line-height: 1.5;
+.Hero .p3 {
+    font-size: 1.1rem; /* Increased font size */
+    line-height: 1.7; /* Improved line height for paragraph */
 }
 
-.button2 {
-    background: #ab4242;
-    color: white;
-    padding: 12px 25px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1rem;
-    font-weight: 500;
-    width: max-content;
-    transition: background-color 0.3s;
-}
-
-.button2:hover {
-    background-color: #8a3535;
+.Hero .button2 { /* Apply common button styles */
+    align-self: center; /* Center button in flex container */
 }
 
 /* Review Section */
 .review-section {
-    padding: 80px 5%;
-    background-color: white;
+    padding: var(--section-padding);
+    background-color: var(--background-white);
 }
 
-.review-h2 {
-    font-size: 2.5rem;
+.review-h2 { /* Use common section title class */
+   /* font-size: 2.5rem;
     text-align: center;
     margin-bottom: 40px;
-    color: #333;
+    color: var(--text-dark); */
 }
 
 .review-slider {
     display: flex;
-    flex-grow: auto;
-    overflow-x: scroll;
-    gap: 30px;
+    overflow-x: auto; /* Changed to auto for better scrollbar behavior */
+    gap: 25px; /* Slightly reduced gap */
     cursor: grab;
-    scrollbar-3dlight-color:red;
-    padding: 10px 100px;
+    padding: 20px 0px; /* Add vertical padding, remove horizontal for full bleed effect if desired or keep padding for edges */
     margin-bottom: 10px;
-   
-  
-    
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+    scrollbar-width: thin; /* For Firefox */
+    scrollbar-color: var(--primary-color) #e0e0e0; /* For Firefox */
 }
 
+.review-slider::-webkit-scrollbar {
+    height: 8px;
+}
+
+.review-slider::-webkit-scrollbar-thumb {
+    background-color: var(--primary-color);
+    border-radius: 10px;
+}
 
 .review-card {
-    flex: 0 0 300px;
-    scroll-snap-align: center;
-    background: #f9f9f9;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    flex: 0 0 280px; /* Slightly smaller cards */
+    scroll-snap-align: start; /* Snap to start */
+    background: var(--background-light); /* Lighter background for cards */
+    padding: 25px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--card-shadow);
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 20px;
+    gap: 15px;
     text-align: center;
 }
 
 .review-card p {
-    font-size: 1rem;
+    font-size: 0.95rem; /* Slightly adjusted font size */
     line-height: 1.6;
     color: #555;
 }
 
 .review-card span {
     font-weight: 600;
-    color: #333;
+    color: var(--text-dark);
+    margin-top: auto; /* Push span to bottom if card heights vary */
 }
 
 .costomer-image {
-    width: 80px;
-    height: 80px;
+    width: 70px; /* Slightly smaller image */
+    height: 70px;
     border-radius: 50%;
     object-fit: cover;
-    border: 3px solid #ab4242;
+    border: 3px solid var(--primary-color);
 }
 
 /* Food Corner */
 .food-corner {
-    padding: 80px 5%;
-    background-color: #f5f5f5;
+    padding: var(--section-padding);
+    background-color: var(--background-light);
 }
 
-.food-corner-h2 {
-    font-size: 2.5rem;
+.food-corner-h2 { /* Use common section title class */
+   /* font-size: 2.5rem;
     text-align: center;
     margin-bottom: 40px;
-    color: #333;
+    color: var(--text-dark); */
 }
 
 .food-corner-content {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); /* Adjusted minmax */
     gap: 20px;
 }
 
 .food-corner-content img {
     width: 100%;
-    height: 250px;
+    height: 230px; /* Adjusted height */
     object-fit: cover;
-    border-radius: 10px;
-    transition: transform 0.3s;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: var(--border-radius);
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Added box-shadow transition */
+    box-shadow: var(--card-shadow);
 }
 
 .food-corner-content img:hover {
-    transform: scale(1.03);
+    transform: scale(1.05); /* Slightly increased hover scale */
+    box-shadow: 0 8px 16px rgba(0,0,0,0.15); /* Enhanced shadow on hover */
 }
 
 /* About Section */
 .about-section {
-    padding: 80px 5%;
+    padding: var(--section-padding);
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    gap: 50px;
-    background-color: white;
+    gap: 40px; /* Reduced gap */
+    background-color: var(--background-white);
 }
 
-.img2 {
-    flex: 1;
-    min-width: 300px;
-    max-width: 500px;
-    height: 400px;
+.about-section .img2 { /* Scoped to about-section */
+    flex: 1 1 300px; /* Flex basis for responsiveness */
+    max-width: 450px; /* Adjusted max-width */
+    height: auto; /* Maintain aspect ratio */
+    aspect-ratio: 4/3; /* Example aspect ratio */
     object-fit: cover;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: var(--border-radius);
+    box-shadow: var(--card-shadow);
 }
 
 .about-content {
-    flex: 1;
-    min-width: 300px;
-    max-width: 600px;
+    flex: 1 1 320px; /* Flex basis for responsiveness */
+    max-width: 550px; /* Adjusted max-width */
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 15px; /* Reduced gap */
 }
 
 .about-content h2 {
     font-size: 2rem;
-    color: #333;
+    color: var(--text-dark);
+    margin-bottom: 10px; /* Add some space below heading */
 }
 
-.pAboutus {
+.pAboutus { /* This class seems specific, can be merged or kept */
     font-size: 1rem;
-    line-height: 1.6;
+    line-height: 1.7;
     color: #555;
 }
 
-.about-content p {
+.about-content p { /* General paragraph styling in about-content */
     font-size: 1rem;
     color: #555;
+    line-height: 1.7;
 }
 
-.button1 {
-    background: #ab4242;
-    color: white;
-    padding: 12px 25px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1rem;
-    font-weight: 500;
-    width: max-content;
-    transition: background-color 0.3s;
-}
-
-.button1:hover {
-    background-color: #8a3535;
+.about-content .button1 { /* Apply common button styles */
+    margin-top: 10px; /* Add some space above button */
+    align-self: flex-start; /* Align button to the start */
 }
 
 /* Contact Section */
-
-.contact-form{
-    padding: 10px 20px;
-}
-form{
-  
-    gap: 10px;
-    height: 400px;
- 
-}
-.contact-section h2 {
-    font-size: 2.5rem;
-    text-align: center;
-    margin-bottom: 40px;
-    color: #333;
+.contact-section {
+    padding: var(--section-padding);
+    background-color: var(--background-light);
 }
 
-.contect-contnt {
+/* .contact-section h2 is covered by .section-title */
+
+.contect-contnt { /* Spelling: contact-content */
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 50px;
+    align-items: flex-start; /* Align items to top */
+    gap: 40px;
 }
 
-.contect-image {
-
-    width: 600px;
+.contect-image { /* Spelling: contact-image */
+    flex: 1 1 300px; /* Flex basis */
+    max-width: 550px; /* Max width */
     height: 400px;
-    border-radius: 10px;
+    border-radius: var(--border-radius);
     overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--card-shadow);
 }
 
 .contect-image iframe {
@@ -375,70 +371,58 @@ form{
     border: none;
 }
 
-.contact-form {
-    
- 
+.contact-form-container { /* Renamed from .contact-form to avoid conflict with form tag */
+    flex: 1 1 320px; /* Flex basis */
+    max-width: 500px; /* Max width */
     display: flex;
     flex-direction: column;
-    gap: 30px;
-    margin-bottom: 20px;
+    gap: 15px; /* Reduced gap */
 }
-.contact-form form{
-    gap: -20px;
-}
-.contact-form p {
+.contact-form-container p {
     font-size: 1rem;
     color: #555;
     line-height: 1.6;
+    margin-bottom: 10px; /* Add space below paragraph */
 }
 
-.contact-form input,
-.contact-form textarea {
+.contact-form-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Gap between form elements */
+}
+
+.contact-form-container input,
+.contact-form-container textarea {
     width: 100%;
-    padding: 10px;
-    margin-top: 18px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
+    padding: 12px; /* Increased padding */
+    border: 1px solid #ccc; /* Lighter border */
+    border-radius: var(--border-radius);
     font-size: 1rem;
-    transition: border-color 0.3s;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.contact-form input:focus,
-.contact-form textarea:focus {
+.contact-form-container input:focus,
+.contact-form-container textarea:focus {
     outline: none;
-    border-color: #ab4242;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(171, 66, 66, 0.2); /* Focus ring */
 }
 
-.contact-form textarea {
-    height: 150px;
+.contact-form-container textarea {
+    min-height: 120px; /* Min height for textarea */
     resize: vertical;
 }
 
-.contact-form button {
-    background: #ab4242;
-    color: white;
-    padding: 12px 25px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1rem;
-    font-weight: 500;
-    transition: background-color 0.3s;
-    margin-top: 10px;
-}
-
-.contact-form button:hover {
-    background-color: #8a3535;
+.contact-form-container button { /* Common button style applies */
+    align-self: flex-start; /* Align button to start */
 }
 
 /* Footer */
 footer {
     background: #222;
-    color: white;
-    padding: 100px;
+    color: var(--text-light);
+    padding: 60px 5% 30px; /* Adjusted padding */
     width: 100%;
-     bottom: 0;
-     
 }
 
 .footerbar {
@@ -446,30 +430,31 @@ footer {
     flex-wrap: wrap;
     justify-content: space-around;
     gap: 30px;
-  
+    margin-bottom: 40px; /* Space before footer article */
 }
 
 .footer-content {
     flex: 1;
-    min-width: 200px;
+    min-width: 200px; /* Ensure content doesn't get too squeezed */
     display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: 15px;
+    align-items: center; /* Center content for consistency */
+    text-align: center; /* Center text */
+    gap: 10px; /* Reduced gap */
 }
 
 .footer-content h3 {
-    font-size: 1.3rem;
+    font-size: 1.2rem; /* Adjusted font size */
     text-decoration: underline;
-    text-decoration-color: #ab4242;
-    text-underline-offset: 8px;
-    margin-bottom: 10px;
+    text-decoration-color: var(--primary-color);
+    text-underline-offset: 6px; /* Adjusted offset */
+    margin-bottom: 8px; /* Adjusted margin */
 }
 
 .footer-content p {
-    text-align: center;
     line-height: 1.6;
-    color: #ddd;
+    color: #ccc; /* Lighter text for footer */
+    font-size: 0.9rem; /* Slightly smaller font */
 }
 
 .footer-article {
@@ -480,131 +465,248 @@ footer {
     padding-top: 20px;
     border-top: 1px solid #444;
     color: #aaa;
-    font-size: 0.9rem;
+    font-size: 0.85rem; /* Adjusted font size */
+}
+.footer-article p {
+    margin: 5px 0; /* Add some margin for wrapped items */
 }
 
 .footer-article a {
-    color: #ab4242;
+    color: var(--primary-color);
     text-decoration: none;
+    transition: color 0.3s ease;
+}
+.footer-article a:hover {
+    color: var(--primary-hover-color);
 }
 
 
-@media (max-width: 1024px) {
-    .Hero {
-        max-width: 450px;
+/* Responsive Design - Media Queries */
+
+/* Tablet and larger mobile */
+@media (max-width: 992px) { /* Adjusted breakpoint */
+    :root {
+        --section-padding: 50px 4%;
     }
-    
-    .p1 {
+    .nev h1 {
+        font-size: 1.6rem;
+    }
+    #nav-menu ul {
+        gap: 20px;
+    }
+    .Hero .p1 {
+        font-size: 2.4rem;
+    }
+    .Hero .p2 {
+        font-size: 1.4rem;
+    }
+    .food-corner-content {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+     .about-section .img2, .about-content {
+        flex-basis: 100%; /* Stack them */
+        max-width: 500px; /* Control max width when stacked */
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .contect-contnt {
+        gap: 30px;
+    }
+    .contect-image, .contact-form-container {
+        flex-basis: 100%; /* Stack them */
+        max-width: 500px; /* Control max width */
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+/* Mobile devices */
+@media (max-width: 768px) {
+    :root {
+        --section-padding: 40px 5%; /* Keep horizontal padding for content */
+    }
+    .section-title {
         font-size: 2rem;
     }
-    
-    .food-corner-content {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-
-@media (max-width: 768px) {
     .hamburger {
-        display: block;
+        display: block; /* Show hamburger */
+        z-index: 1001; /* Ensure hamburger is above nav menu if it animates */
+        position: relative; /* For z-index */
     }
-    
-    nav {
+
+    #nav-menu {
+        display: none;
         position: absolute;
-        top: 100%;
+        top: 0; /* Align to top */
         left: 0;
         width: 100%;
-        background-color: rgba(0, 0, 0, 0.9);
+        height: 100vh; /* Full height */
+        background: rgba(34, 34, 34, 0.98); /* Darker, slightly transparent */
+        padding-top: 70px; /* Space for header/close button */
         flex-direction: column;
-        padding: 20px 0;
-        display: none;
+        align-items: center; /* Center items */
+        justify-content: center; /* Center items vertically */
+        transform: translateX(-100%); /* Initially off-screen */
+        transition: transform 0.3s ease-in-out;
+        z-index: 1000; /* Below hamburger but above content */
     }
-    
-    nav.show-nav {
-        display: flex;
+
+    #nav-menu.active {
+        display: flex; /* Use flex when active */
+        transform: translateX(0%); /* Slide in */
     }
-    
-    nav ul {
+
+    #nav-menu ul {
         flex-direction: column;
         align-items: center;
-        gap: 15px;
+        gap: 25px; /* Increased gap for touch targets */
     }
-    
+    #nav-menu ul li a {
+        font-size: 1.4rem; /* Larger font for mobile menu */
+    }
+
     .book-btn {
-        display: none;
+        display: none; /* Hide book button, could be moved into mobile menu */
     }
-    
+
     .Hero {
-        max-width: 100%;
-        background-color: rgba(0, 0, 0, 0.8);
-        padding: 30px;
+        padding: 30px 20px; /* Adjusted padding */
     }
-    
-    .p1 {
-        font-size: 1.8rem;
+    .Hero .p1 {
+        font-size: 2rem;
     }
-    
-    .p2 {
+    .Hero .p2 {
         font-size: 1.3rem;
     }
-    
+    .Hero .p3 {
+        font-size: 1rem;
+    }
+
+    .review-slider {
+        padding: 15px 0; /* Adjust padding for mobile */
+    }
+    .review-card {
+        flex: 0 0 250px; /* Smaller cards on mobile */
+        padding: 20px;
+    }
+
     .food-corner-content {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* Adjust for smaller screens */
+        gap: 15px;
+    }
+    .food-corner-content img {
+        height: 200px;
     }
     
     .about-section {
-        flex-direction: column;
+        gap: 30px;
     }
-    
-    .img2 {
-        width: 100%;
-        height: 300px;
+     .about-section .img2 {
+        height: auto; /* Maintain aspect ratio */
+        max-height: 300px; /* Max height for image */
     }
-    
-    .contect-contnt {
-        flex-direction: column;
-    }
-    
+
     .contect-image {
-        width: 100%;
-        height: 300px;
+        height: 300px; /* Adjust map height */
+    }
+    .contact-form-container input, .contact-form-container textarea {
+        padding: 10px;
+    }
+
+    .footerbar {
+        flex-direction: column;
+        align-items: center; /* Center footer content columns */
+        gap: 30px;
+    }
+    .footer-content {
+        min-width: auto; /* Allow content to shrink */
+        width: 100%; /* Take full width when stacked */
+        max-width: 300px; /* Max width for readability */
+    }
+    .footer-article {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
     }
 }
 
+/* Smaller mobile devices */
 @media (max-width: 480px) {
+    :root {
+        --section-padding: 30px 4%;
+    }
+    .nev {
+        padding: 10px 4%;
+    }
     .nev h1 {
-        font-size: 1.5rem;
+        font-size: 1.4rem;
     }
-    
+    .hamburger {
+        font-size: 24px;
+    }
+    .section-title {
+        font-size: 1.8rem;
+        margin-bottom: 30px;
+    }
+
     .Hero {
-        padding: 20px;
+        padding: 20px 15px;
+    }
+    .Hero .p1 {
+        font-size: 1.8rem;
+    }
+    .Hero .p2 {
+        font-size: 1.2rem;
+    }
+    .Hero .p3 {
+        font-size: 0.9rem;
+    }
+    .button, .book-btn, .Hero .button2 { /* Scale down buttons */
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+
+    .review-slider {
+         padding-left: 5%; /* Add some padding so cards don't touch edge */
+         padding-right: 5%;
+    }
+    .review-card {
+        flex: 0 0 80%; /* Make cards take more width */
+        max-width: 280px; /* But not too wide */
+    }
+
+    .food-corner-content {
+        grid-template-columns: 1fr; /* Single column for very small screens */
+        gap: 15px;
+    }
+     .food-corner-content img {
+        height: 220px; /* Adjust height for single column */
     }
     
-    .p1 {
-        font-size: 1.5rem;
+    .about-content h2 {
+        font-size: 1.6rem;
     }
-    
-    .p2 {
+    .pAboutus, .about-content p {
+        font-size: 0.9rem;
+    }
+
+    .contact-section {
+        padding-bottom: 60px; /* Ensure space for submit button if form is long */
+    }
+    .contect-image {
+        height: 250px;
+    }
+    .contact-form-container p {
+        font-size: 0.9rem;
+    }
+
+    .footer-content h3 {
         font-size: 1.1rem;
     }
-    
-    .review-h2,
-    .food-corner-h2,
-    .contact-section h2 {
-        font-size: 2rem;
+    .footer-content p {
+        font-size: 0.85rem;
     }
-    
-    .food-corner-content {
-        grid-template-columns: 1fr;
-    }
-    
-    .footerbar {
-        flex-direction: column;
-        gap: 30px;
-    }
-    
     .footer-article {
-        flex-direction: column;
-        gap: 10px;
-        text-align: center;
+        font-size: 0.8rem;
     }
 }
