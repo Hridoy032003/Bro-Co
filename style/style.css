@@ -1,19 +1,5 @@
-/* Global Styles */
-:root {
-    --primary-color: #ab4242;
-    --primary-hover-color: #8a3535;
-    --text-light: white;
-    --text-dark: #333;
-    --background-light: #f5f5f5;
-    --background-white: white;
-    --font-main: "Roboto", sans-serif;
-    --section-padding: 60px 5%; /* Reduced padding for smaller screens by default */
-    --card-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    --border-radius: 8px; /* Slightly more rounded corners */
-}
-
 * {
-    font-family: var(--font-main);
+    font-family: "Roboto", sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -23,44 +9,13 @@
 body {
     width: 100%;
     overflow-x: hidden;
-    background-color: var(--background-light);
-    color: var(--text-dark);
-    line-height: 1.6; /* Improved default line height */
+    background-color: #f5f5f5;
 }
 
-h1, h2, h3 {
-    line-height: 1.2; /* Consistent line height for headings */
-}
-
-/* Utility Classes */
-.button {
-    background-color: var(--primary-color);
-    border: none;
-    padding: 12px 25px;
-    color: var(--text-light);
-    cursor: pointer;
-    border-radius: var(--border-radius);
-    font-weight: 500;
-    text-decoration: none;
-    display: inline-block;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-.button:hover {
-    background-color: var(--primary-hover-color);
-    transform: translateY(-2px);
-}
-
-.section-title {
-    font-size: 2.2rem; /* Slightly reduced for better balance */
-    text-align: center;
-    margin-bottom: 40px;
-    color: var(--text-dark);
-}
-
-/* Main Section (Hero area) */
+/* Main Section */
 .main {
-    min-height: 100vh; /* Use min-height for flexibility */
+    height: 100vh;
+    min-height: 600px;
     display: flex;
     flex-direction: column;
     position: relative;
@@ -84,285 +39,341 @@ h1, h2, h3 {
     justify-content: space-between;
     align-items: center;
     padding: 15px 5%;
-    color: var(--text-light);
-    position: sticky; /* Make navbar sticky */
-    top: 0;
-    background-color: rgba(0, 0, 0, 0.6); /* Slightly darker for better readability */
-    z-index: 1000; /* Ensure navbar is on top */
-    transition: background-color 0.3s ease;
+    color: white;
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 10;
 }
 
 .nev h1 {
     margin: 0;
     font-size: 1.8rem;
-    color: var(--text-light);
+    color: white;
 }
 
-#nav-menu ul { /* Target ul inside #nav-menu */
+nav ul {
     display: flex;
     list-style: none;
     padding: 0;
     margin: 0;
-    gap: 25px; /* Increased gap */
+    gap: 20px;
 }
 
-#nav-menu ul li a {
-    color: var(--text-light);
+nav ul li a {
+    color: white;
     text-decoration: none;
     font-weight: 500;
     transition: color 0.3s;
-    padding: 5px 0; /* Add some padding for easier clicking */
 }
 
-#nav-menu ul li a:hover {
-    color: var(--primary-color);
+nav ul li a:hover {
+    color: #ab4242;
 }
 
-.book-btn { /* Apply common button styles */
-    background-color: var(--primary-color);
+.book-btn {
+    background-color: #ab4242;
     border: none;
     padding: 10px 20px;
-    color: var(--text-light);
+    color: white;
     cursor: pointer;
-    border-radius: var(--border-radius);
+    border-radius: 5px;
     font-weight: 500;
-    transition: background-color 0.3s, transform 0.2s ease;
+    transition: background-color 0.3s;
 }
 
 .book-btn:hover {
-    background-color: var(--primary-hover-color);
-    transform: translateY(-2px);
+    background-color: #8a3535;
 }
 
 /* Hamburger Menu Styles */
 .hamburger {
     display: none;
+    /* Hidden by default on larger screens */
     background: none;
     border: none;
-    font-size: 28px; /* Slightly larger */
+    font-size: 24px;
     cursor: pointer;
-    color: var(--text-light);
-    padding: 5px; /* Add padding for easier tap */
+    color: white;
+    /* or your preferred color */
 }
 
-/* Hero Content Section */
-.hero-section-content { /* Renamed from 'section' to avoid conflict with HTML5 <section> tag if used elsewhere */
-    flex-grow: 1; /* Allow hero content to take available space */
+/* Mobile Styles */
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+        /* Show hamburger on mobile */
+    }
+
+    #nav-menu {
+        display: none;
+        /* Hide nav by default on mobile */
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: #333;
+        /* or your preferred background */
+        padding: 1rem;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    #nav-menu.active {
+        display: block;
+    }
+
+    #nav-menu ul {
+        flex-direction: column;
+    }
+
+    /* Hide other elements if needed */
+    .book-btn {
+        display: none;
+    }
+}
+
+/* Hero Section */
+section {
+    height: calc(100vh - 80px);
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: var(--section-padding);
-    text-align: center; /* Center hero text */
+    padding: 0 5%;
 }
 
-.Hero { /* This is the content box inside hero-section-content */
-    max-width: 600px; /* Increased max-width */
+.Hero {
+    max-width: 500px;
     padding: 40px;
-    background-color: rgba(0, 0, 0, 0.75); /* Darker overlay for text contrast */
-    border-radius: var(--border-radius);
-    color: var(--text-light);
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+    color: white;
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
 
-.Hero .p1 { /* Target specifically within .Hero */
-    font-size: 2.8rem; /* Increased font size */
+.p1 {
+    font-size: 2.5rem;
     font-weight: 700;
     line-height: 1.2;
 }
 
-.Hero .p2 {
-    font-size: 1.6rem; /* Increased font size */
+.p2 {
+    font-size: 1.5rem;
     font-weight: 500;
-    opacity: 0.9; /* Slight opacity for subtlety */
 }
 
-.Hero .p3 {
-    font-size: 1.1rem; /* Increased font size */
-    line-height: 1.7; /* Improved line height for paragraph */
+.p3 {
+    font-size: 1rem;
+    line-height: 1.5;
 }
 
-.Hero .button2 { /* Apply common button styles */
-    align-self: center; /* Center button in flex container */
+.button2 {
+    background: #ab4242;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+    width: max-content;
+    transition: background-color 0.3s;
+}
+
+.button2:hover {
+    background-color: #8a3535;
 }
 
 /* Review Section */
 .review-section {
-    padding: var(--section-padding);
-    background-color: var(--background-white);
+    padding: 80px 5%;
+    background-color: white;
 }
 
-.review-h2 { /* Use common section title class */
-   /* font-size: 2.5rem;
+.review-h2 {
+    font-size: 2.5rem;
     text-align: center;
     margin-bottom: 40px;
-    color: var(--text-dark); */
+    color: #333;
 }
 
 .review-slider {
     display: flex;
-    overflow-x: auto; /* Changed to auto for better scrollbar behavior */
-    gap: 25px; /* Slightly reduced gap */
+    flex-grow: auto;
+    overflow-x: scroll;
+    gap: 30px;
     cursor: grab;
-    padding: 20px 0px; /* Add vertical padding, remove horizontal for full bleed effect if desired or keep padding for edges */
+    scrollbar-3dlight-color: red;
+    padding: 10px 100px;
     margin-bottom: 10px;
-    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
-    scrollbar-width: thin; /* For Firefox */
-    scrollbar-color: var(--primary-color) #e0e0e0; /* For Firefox */
+
+
+
 }
 
-.review-slider::-webkit-scrollbar {
-    height: 8px;
-}
-
-.review-slider::-webkit-scrollbar-thumb {
-    background-color: var(--primary-color);
-    border-radius: 10px;
-}
 
 .review-card {
-    flex: 0 0 280px; /* Slightly smaller cards */
-    scroll-snap-align: start; /* Snap to start */
-    background: var(--background-light); /* Lighter background for cards */
-    padding: 25px;
-    border-radius: var(--border-radius);
-    box-shadow: var(--card-shadow);
+    flex: 0 0 300px;
+    scroll-snap-align: center;
+    background: #f9f9f9;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 15px;
+    gap: 20px;
     text-align: center;
 }
 
 .review-card p {
-    font-size: 0.95rem; /* Slightly adjusted font size */
+    font-size: 1rem;
     line-height: 1.6;
     color: #555;
 }
 
 .review-card span {
     font-weight: 600;
-    color: var(--text-dark);
-    margin-top: auto; /* Push span to bottom if card heights vary */
+    color: #333;
 }
 
 .costomer-image {
-    width: 70px; /* Slightly smaller image */
-    height: 70px;
+    width: 80px;
+    height: 80px;
     border-radius: 50%;
     object-fit: cover;
-    border: 3px solid var(--primary-color);
+    border: 3px solid #ab4242;
 }
 
 /* Food Corner */
 .food-corner {
-    padding: var(--section-padding);
-    background-color: var(--background-light);
+    padding: 80px 5%;
+    background-color: #f5f5f5;
 }
 
-.food-corner-h2 { /* Use common section title class */
-   /* font-size: 2.5rem;
+.food-corner-h2 {
+    font-size: 2.5rem;
     text-align: center;
     margin-bottom: 40px;
-    color: var(--text-dark); */
+    color: #333;
 }
 
 .food-corner-content {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); /* Adjusted minmax */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
 }
 
 .food-corner-content img {
     width: 100%;
-    height: 230px; /* Adjusted height */
+    height: 250px;
     object-fit: cover;
-    border-radius: var(--border-radius);
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Added box-shadow transition */
-    box-shadow: var(--card-shadow);
+    border-radius: 10px;
+    transition: transform 0.3s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .food-corner-content img:hover {
-    transform: scale(1.05); /* Slightly increased hover scale */
-    box-shadow: 0 8px 16px rgba(0,0,0,0.15); /* Enhanced shadow on hover */
+    transform: scale(1.03);
 }
 
 /* About Section */
 .about-section {
-    padding: var(--section-padding);
+    padding: 80px 5%;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    gap: 40px; /* Reduced gap */
-    background-color: var(--background-white);
+    gap: 50px;
+    background-color: white;
 }
 
-.about-section .img2 { /* Scoped to about-section */
-    flex: 1 1 300px; /* Flex basis for responsiveness */
-    max-width: 450px; /* Adjusted max-width */
-    height: auto; /* Maintain aspect ratio */
-    aspect-ratio: 4/3; /* Example aspect ratio */
+.img2 {
+    flex: 1;
+    min-width: 300px;
+    max-width: 500px;
+    height: 400px;
     object-fit: cover;
-    border-radius: var(--border-radius);
-    box-shadow: var(--card-shadow);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .about-content {
-    flex: 1 1 320px; /* Flex basis for responsiveness */
-    max-width: 550px; /* Adjusted max-width */
+    flex: 1;
+    min-width: 300px;
+    max-width: 600px;
     display: flex;
     flex-direction: column;
-    gap: 15px; /* Reduced gap */
+    gap: 20px;
 }
 
 .about-content h2 {
     font-size: 2rem;
-    color: var(--text-dark);
-    margin-bottom: 10px; /* Add some space below heading */
+    color: #333;
 }
 
-.pAboutus { /* This class seems specific, can be merged or kept */
+.pAboutus {
     font-size: 1rem;
-    line-height: 1.7;
+    line-height: 1.6;
     color: #555;
 }
 
-.about-content p { /* General paragraph styling in about-content */
+.about-content p {
     font-size: 1rem;
     color: #555;
-    line-height: 1.7;
 }
 
-.about-content .button1 { /* Apply common button styles */
-    margin-top: 10px; /* Add some space above button */
-    align-self: flex-start; /* Align button to the start */
+.button1 {
+    background: #ab4242;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+    width: max-content;
+    transition: background-color 0.3s;
+}
+
+.button1:hover {
+    background-color: #8a3535;
 }
 
 /* Contact Section */
-.contact-section {
-    padding: var(--section-padding);
-    background-color: var(--background-light);
+
+.contact-form {
+    padding: 10px 20px;
 }
 
-/* .contact-section h2 is covered by .section-title */
+form {
 
-.contect-contnt { /* Spelling: contact-content */
+    gap: 10px;
+    height: 400px;
+
+}
+
+.contact-section h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 40px;
+    color: #333;
+}
+
+.contect-contnt {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    align-items: flex-start; /* Align items to top */
-    gap: 40px;
+    gap: 50px;
 }
 
-.contect-image { /* Spelling: contact-image */
-    flex: 1 1 300px; /* Flex basis */
-    max-width: 550px; /* Max width */
+.contect-image {
+
+    width: 600px;
     height: 400px;
-    border-radius: var(--border-radius);
+    border-radius: 10px;
     overflow: hidden;
-    box-shadow: var(--card-shadow);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .contect-image iframe {
@@ -371,58 +382,72 @@ h1, h2, h3 {
     border: none;
 }
 
-.contact-form-container { /* Renamed from .contact-form to avoid conflict with form tag */
-    flex: 1 1 320px; /* Flex basis */
-    max-width: 500px; /* Max width */
+.contact-form {
+
+
     display: flex;
     flex-direction: column;
-    gap: 15px; /* Reduced gap */
+    gap: 30px;
+    margin-bottom: 20px;
 }
-.contact-form-container p {
+
+.contact-form form {
+    gap: -20px;
+}
+
+.contact-form p {
     font-size: 1rem;
     color: #555;
     line-height: 1.6;
-    margin-bottom: 10px; /* Add space below paragraph */
 }
 
-.contact-form-container form {
-    display: flex;
-    flex-direction: column;
-    gap: 20px; /* Gap between form elements */
-}
-
-.contact-form-container input,
-.contact-form-container textarea {
+.contact-form input,
+.contact-form textarea {
     width: 100%;
-    padding: 12px; /* Increased padding */
-    border: 1px solid #ccc; /* Lighter border */
-    border-radius: var(--border-radius);
+    padding: 10px;
+    margin-top: 18px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
     font-size: 1rem;
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    transition: border-color 0.3s;
 }
 
-.contact-form-container input:focus,
-.contact-form-container textarea:focus {
+.contact-form input:focus,
+.contact-form textarea:focus {
     outline: none;
-    border-color: var(--primary-color);
-    box-shadow: 0 0 0 3px rgba(171, 66, 66, 0.2); /* Focus ring */
+    border-color: #ab4242;
 }
 
-.contact-form-container textarea {
-    min-height: 120px; /* Min height for textarea */
+.contact-form textarea {
+    height: 150px;
     resize: vertical;
 }
 
-.contact-form-container button { /* Common button style applies */
-    align-self: flex-start; /* Align button to start */
+.contact-form button {
+    background: #ab4242;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+}
+
+.contact-form button:hover {
+    background-color: #8a3535;
 }
 
 /* Footer */
 footer {
     background: #222;
-    color: var(--text-light);
-    padding: 60px 5% 30px; /* Adjusted padding */
+    color: white;
+    padding: 100px;
     width: 100%;
+    bottom: 0;
+
 }
 
 .footerbar {
@@ -430,31 +455,30 @@ footer {
     flex-wrap: wrap;
     justify-content: space-around;
     gap: 30px;
-    margin-bottom: 40px; /* Space before footer article */
+
 }
 
 .footer-content {
     flex: 1;
-    min-width: 200px; /* Ensure content doesn't get too squeezed */
+    min-width: 200px;
     display: flex;
     flex-direction: column;
-    align-items: center; /* Center content for consistency */
-    text-align: center; /* Center text */
-    gap: 10px; /* Reduced gap */
+    align-items: center;
+    gap: 15px;
 }
 
 .footer-content h3 {
-    font-size: 1.2rem; /* Adjusted font size */
+    font-size: 1.3rem;
     text-decoration: underline;
-    text-decoration-color: var(--primary-color);
-    text-underline-offset: 6px; /* Adjusted offset */
-    margin-bottom: 8px; /* Adjusted margin */
+    text-decoration-color: #ab4242;
+    text-underline-offset: 8px;
+    margin-bottom: 10px;
 }
 
 .footer-content p {
+    text-align: center;
     line-height: 1.6;
-    color: #ccc; /* Lighter text for footer */
-    font-size: 0.9rem; /* Slightly smaller font */
+    color: #ddd;
 }
 
 .footer-article {
@@ -465,248 +489,131 @@ footer {
     padding-top: 20px;
     border-top: 1px solid #444;
     color: #aaa;
-    font-size: 0.85rem; /* Adjusted font size */
-}
-.footer-article p {
-    margin: 5px 0; /* Add some margin for wrapped items */
+    font-size: 0.9rem;
 }
 
 .footer-article a {
-    color: var(--primary-color);
+    color: #ab4242;
     text-decoration: none;
-    transition: color 0.3s ease;
-}
-.footer-article a:hover {
-    color: var(--primary-hover-color);
 }
 
 
-/* Responsive Design - Media Queries */
+@media (max-width: 1024px) {
+    .Hero {
+        max-width: 450px;
+    }
 
-/* Tablet and larger mobile */
-@media (max-width: 992px) { /* Adjusted breakpoint */
-    :root {
-        --section-padding: 50px 4%;
-    }
-    .nev h1 {
-        font-size: 1.6rem;
-    }
-    #nav-menu ul {
-        gap: 20px;
-    }
-    .Hero .p1 {
-        font-size: 2.4rem;
-    }
-    .Hero .p2 {
-        font-size: 1.4rem;
-    }
-    .food-corner-content {
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    }
-     .about-section .img2, .about-content {
-        flex-basis: 100%; /* Stack them */
-        max-width: 500px; /* Control max width when stacked */
-        margin-left: auto;
-        margin-right: auto;
-    }
-    .contect-contnt {
-        gap: 30px;
-    }
-    .contect-image, .contact-form-container {
-        flex-basis: 100%; /* Stack them */
-        max-width: 500px; /* Control max width */
-        margin-left: auto;
-        margin-right: auto;
-    }
-}
-
-/* Mobile devices */
-@media (max-width: 768px) {
-    :root {
-        --section-padding: 40px 5%; /* Keep horizontal padding for content */
-    }
-    .section-title {
+    .p1 {
         font-size: 2rem;
     }
+
+    .food-corner-content {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
     .hamburger {
-        display: block; /* Show hamburger */
-        z-index: 1001; /* Ensure hamburger is above nav menu if it animates */
-        position: relative; /* For z-index */
+        display: block;
     }
 
-    #nav-menu {
-        display: none;
+    nav {
         position: absolute;
-        top: 0; /* Align to top */
+        top: 100%;
         left: 0;
         width: 100%;
-        height: 100vh; /* Full height */
-        background: rgba(34, 34, 34, 0.98); /* Darker, slightly transparent */
-        padding-top: 70px; /* Space for header/close button */
+        background-color: rgba(0, 0, 0, 0.9);
         flex-direction: column;
-        align-items: center; /* Center items */
-        justify-content: center; /* Center items vertically */
-        transform: translateX(-100%); /* Initially off-screen */
-        transition: transform 0.3s ease-in-out;
-        z-index: 1000; /* Below hamburger but above content */
+        padding: 20px 0;
+        display: none;
     }
 
-    #nav-menu.active {
-        display: flex; /* Use flex when active */
-        transform: translateX(0%); /* Slide in */
+    nav.show-nav {
+        display: flex;
     }
 
-    #nav-menu ul {
+    nav ul {
         flex-direction: column;
         align-items: center;
-        gap: 25px; /* Increased gap for touch targets */
-    }
-    #nav-menu ul li a {
-        font-size: 1.4rem; /* Larger font for mobile menu */
+        gap: 15px;
     }
 
     .book-btn {
-        display: none; /* Hide book button, could be moved into mobile menu */
+        display: none;
     }
 
     .Hero {
-        padding: 30px 20px; /* Adjusted padding */
-    }
-    .Hero .p1 {
-        font-size: 2rem;
-    }
-    .Hero .p2 {
-        font-size: 1.3rem;
-    }
-    .Hero .p3 {
-        font-size: 1rem;
+        max-width: 100%;
+        background-color: rgba(0, 0, 0, 0.8);
+        padding: 30px;
     }
 
-    .review-slider {
-        padding: 15px 0; /* Adjust padding for mobile */
+    .p1 {
+        font-size: 1.8rem;
     }
-    .review-card {
-        flex: 0 0 250px; /* Smaller cards on mobile */
-        padding: 20px;
+
+    .p2 {
+        font-size: 1.3rem;
     }
 
     .food-corner-content {
-        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* Adjust for smaller screens */
-        gap: 15px;
+        grid-template-columns: repeat(2, 1fr);
     }
-    .food-corner-content img {
-        height: 200px;
-    }
-    
+
     .about-section {
-        gap: 30px;
+        flex-direction: column;
     }
-     .about-section .img2 {
-        height: auto; /* Maintain aspect ratio */
-        max-height: 300px; /* Max height for image */
+
+    .img2 {
+        width: 100%;
+        height: 300px;
+    }
+
+    .contect-contnt {
+        flex-direction: column;
     }
 
     .contect-image {
-        height: 300px; /* Adjust map height */
+        width: 100%;
+        height: 300px;
     }
-    .contact-form-container input, .contact-form-container textarea {
-        padding: 10px;
+}
+
+@media (max-width: 480px) {
+    .nev h1 {
+        font-size: 1.5rem;
+    }
+
+    .Hero {
+        padding: 20px;
+    }
+
+    .p1 {
+        font-size: 1.5rem;
+    }
+
+    .p2 {
+        font-size: 1.1rem;
+    }
+
+    .review-h2,
+    .food-corner-h2,
+    .contact-section h2 {
+        font-size: 2rem;
+    }
+
+    .food-corner-content {
+        grid-template-columns: 1fr;
     }
 
     .footerbar {
         flex-direction: column;
-        align-items: center; /* Center footer content columns */
         gap: 30px;
     }
-    .footer-content {
-        min-width: auto; /* Allow content to shrink */
-        width: 100%; /* Take full width when stacked */
-        max-width: 300px; /* Max width for readability */
-    }
+
     .footer-article {
         flex-direction: column;
-        text-align: center;
         gap: 10px;
-    }
-}
-
-/* Smaller mobile devices */
-@media (max-width: 480px) {
-    :root {
-        --section-padding: 30px 4%;
-    }
-    .nev {
-        padding: 10px 4%;
-    }
-    .nev h1 {
-        font-size: 1.4rem;
-    }
-    .hamburger {
-        font-size: 24px;
-    }
-    .section-title {
-        font-size: 1.8rem;
-        margin-bottom: 30px;
-    }
-
-    .Hero {
-        padding: 20px 15px;
-    }
-    .Hero .p1 {
-        font-size: 1.8rem;
-    }
-    .Hero .p2 {
-        font-size: 1.2rem;
-    }
-    .Hero .p3 {
-        font-size: 0.9rem;
-    }
-    .button, .book-btn, .Hero .button2 { /* Scale down buttons */
-        padding: 10px 20px;
-        font-size: 0.9rem;
-    }
-
-    .review-slider {
-         padding-left: 5%; /* Add some padding so cards don't touch edge */
-         padding-right: 5%;
-    }
-    .review-card {
-        flex: 0 0 80%; /* Make cards take more width */
-        max-width: 280px; /* But not too wide */
-    }
-
-    .food-corner-content {
-        grid-template-columns: 1fr; /* Single column for very small screens */
-        gap: 15px;
-    }
-     .food-corner-content img {
-        height: 220px; /* Adjust height for single column */
-    }
-    
-    .about-content h2 {
-        font-size: 1.6rem;
-    }
-    .pAboutus, .about-content p {
-        font-size: 0.9rem;
-    }
-
-    .contact-section {
-        padding-bottom: 60px; /* Ensure space for submit button if form is long */
-    }
-    .contect-image {
-        height: 250px;
-    }
-    .contact-form-container p {
-        font-size: 0.9rem;
-    }
-
-    .footer-content h3 {
-        font-size: 1.1rem;
-    }
-    .footer-content p {
-        font-size: 0.85rem;
-    }
-    .footer-article {
-        font-size: 0.8rem;
+        text-align: center;
     }
 }

@@ -205,7 +205,8 @@ img {
     gap: 5px;
     width: 100%;
 }
-.remove-btn{
+
+.remove-btn {
     background: red;
     padding: 10px 20px;
     border-radius: 5px;
@@ -214,11 +215,13 @@ img {
     cursor: pointer;
 
 }
+
 .remove-btn:hover {
     background: rgb(215, 78, 78);
-   
+
 
 }
+
 .oder-content .main-container .item-content .item-qunity {
     display: flex;
     width: 100%;
@@ -242,12 +245,12 @@ body.showCart .side-bar {
     .menu-section {
         padding: 15px;
     }
-    
+
     .food-menu {
         grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
         gap: 15px;
     }
-    
+
     .side-bar {
         max-width: 350px;
     }
@@ -257,24 +260,24 @@ body.showCart .side-bar {
     .menu-section {
         padding: 10px;
     }
-    
+
     .menu-header h1 {
         font-size: 1.5rem;
     }
-    
+
     .food-menu {
         grid-template-columns: 1fr;
         gap: 10px;
     }
-    
+
     .side-bar {
         max-width: 100%;
     }
-    
+
     .side-bar .button {
         flex-direction: column;
     }
-    
+
     .side-bar .button button {
         width: 100%;
         margin-bottom: 10px;
@@ -286,22 +289,24 @@ body.showCart .side-bar {
     .menu-header h1 {
         font-size: 1.2rem;
     }
-    
+
     .food-section .food-menu .food-card {
         padding: 15px;
     }
 }
-.add-to-cart{
+
+.add-to-cart {
     padding: 10px;
     background: #ab4242;
     border-radius: 5px;
-    border:none;
+    border: none;
     font-size: 16px;
     margin-top: 5px;
     cursor: pointer;
-    
+
 }
-.add-to-cart:hover{
+
+.add-to-cart:hover {
     background: #bf5858;
     color: white;
 }
@@ -317,8 +322,8 @@ body.showCart .side-bar {
     height: 100%;
     background-color: rgba(0, 0, 0, 0.7);
     z-index: 1000;
-  align-content: center;
-  justify-items: center;
+    align-content: center;
+    justify-items: center;
 }
 
 .modal-content {
@@ -334,8 +339,15 @@ body.showCart .side-bar {
 }
 
 @keyframes modalFadeIn {
-    from {opacity: 0; transform: translateY(-50px);}
-    to {opacity: 1; transform: translateY(0);}
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .success-icon {
@@ -409,20 +421,22 @@ body.showCart .side-bar {
     justify-content: center;
     gap: 10px;
 }
-#icon-tg{
+
+#icon-tg {
     color: white;
     text-align: center;
     height: 22px;
     width: 22px;
     border-radius: 50%;
-   margin-top: -15px;
+    margin-top: -15px;
     background: red;
 }
-.delete-item{
+
+.delete-item {
     height: 10px;
     width: 10px;
     object-fit: cover;
-   padding: 10px;
-   cursor: pointer;
-   background: none;
+    padding: 10px;
+    cursor: pointer;
+    background: none;
 }
