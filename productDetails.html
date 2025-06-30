@@ -5,14 +5,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Product Details</title>
-    <link rel="stylesheet" href="../style/productDetails.css">
-    <link rel="stylesheet" href="../style/style.css">
-    <link rel="stylesheet" href="../style/menu.css">
+    <link rel="stylesheet" href="./style/productDetails.css">
+    <link rel="stylesheet" href="./style/style.css">
+    <link rel="stylesheet" href="./style/menu.css">
 
     <script src="./js/menu.js" defer></script>
 </head>
 
 <body>
+    <div class="main">
+    
+        <img class="img1" src="" alt="" id="image">
+        <div class="nev">
+            <h1>Brew & Co</h1>
+    
+            <button class="hamburger" id="hamburger">&#9776;</button>
+    
+            <nav id="nav-menu">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#section1-about">About Us</a></li>
+                    <li><a href="menu.html">Menu</a></li>
+                    <li><a href="#contect">Contact</a></li>
+    
+                </ul>
+            </nav>
+    
+            <button class="book-btn">Book a Table</button>
+        </div>
     <section>
         <div class="img-product">
             <img id="product-image" src="" alt="Product Image">
@@ -24,7 +44,7 @@
       
         </div>
     </section>
-
+ 
     <script>
        
         document.addEventListener('DOMContentLoaded', () => {
