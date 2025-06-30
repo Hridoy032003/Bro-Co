@@ -183,11 +183,21 @@ section {
 .button2:hover {
     background-color: #8a3535;
 }
+.button2 a{
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
 
 /* Review Section */
 .review-section {
     padding: 80px 5%;
     background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .review-h2 {
@@ -198,38 +208,50 @@ section {
 }
 
 .review-slider {
-    display: flex;
-    flex-grow: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+scrollbar-width: none;
+    gap: 20px;
     overflow-x: scroll;
-    gap: 30px;
-    cursor: grab;
-    scrollbar-3dlight-color: red;
-    padding: 10px 100px;
-    margin-bottom: 10px;
-
-
-
+    padding: 20px 0;
+    width: 100%;
 }
-
 
 .review-card {
     flex: 0 0 300px;
-    scroll-snap-align: center;
+    
+
     background: #f9f9f9;
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
     gap: 20px;
     text-align: center;
+    min-width: 270px;
+    height: 300px;
+    transition: transform 0.3s;
+  
+   
+
+
+
+};
+.review-card:hover {
+    transform: scale(1.03);
+    transition: ease-in-out;
+
 }
+
 
 .review-card p {
     font-size: 1rem;
     line-height: 1.6;
     color: #555;
+    margin: 0;
 }
 
 .review-card span {
@@ -245,6 +267,36 @@ section {
     border: 3px solid #ab4242;
 }
 
+/* Media Queries for responsiveness */
+@media (max-width: 768px) {
+    .review-slider {
+        padding: 20px;
+    }
+
+    .review-card {
+        flex: 0 0 250px;
+    }
+
+    .review-h2 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .review-slider {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .review-card {
+        flex: 0 0 90%;
+        margin-bottom: 20px;
+    }
+
+    .review-h2 {
+        font-size: 1.8rem;
+    }
+}
 /* Food Corner */
 .food-corner {
     padding: 80px 5%;
